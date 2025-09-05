@@ -12,9 +12,11 @@ import appStylesHref from "./app.css?url";
 
 import { getContacts } from "./data";
 
-export async function clientLoader() {
-  const contacts = await getContacts();
-  return { contacts };
+import { createEmptyContact } from "./data";
+
+export async function action() {
+  const contact = await createEmptyContact();
+  return { contact };
 }
 
 export default function App() {
